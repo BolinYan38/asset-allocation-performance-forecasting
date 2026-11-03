@@ -8,7 +8,23 @@ experiments/
   historical/     日期定位与历史收益重建
 ```
 
-两种方法分别使用目录内的 `common.py`，包含各自的数据读取、评分和输出函数。原始比赛数据默认目录为 `~/Dataset/Asset Allocation Performance Forecasting/`。
+两种方法分别使用目录内的 `common.py`，包含各自的数据读取、评分和输出函数。
+
+## 原始比赛数据
+
+**原始比赛数据未上传至 GitHub，本仓库不包含原始训练集、测试集和标签文件。** 从原始数据开始运行实验时，请自行从比赛平台获取以下文件，并放入默认数据目录 `~/Dataset/Asset Allocation Performance Forecasting/`：
+
+```text
+~/Dataset/Asset Allocation Performance Forecasting/
+  X_train.csv             原始训练特征
+  y_train.csv             原始训练标签
+  X_test.csv              官方测试特征
+  sample_submission.csv   提交格式与行号顺序
+```
+
+仓库中已保存的股票行情、特征缓存、模型权重和预测结果属于实验资料，与上述原始比赛文件分别存放。
+
+## 方法与运行说明
 
 | 方法 | 程序入口 | 说明与资料 |
 |---|---|---|
