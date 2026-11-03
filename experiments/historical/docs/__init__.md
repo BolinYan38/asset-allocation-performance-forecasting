@@ -34,6 +34,6 @@ dataset = project.prepare(mode="validation", device="cpu")
 
 ## 3. 与命令入口的分工
 
-包导入负责提供类，实例化和方法调用由使用者完成。`python -m experiments.historical` 则由 [__main__.py](__main__.md) 解析命令并调用流程。
+我们通过包入口导出公共类，由调用程序创建实例并执行相应方法。`python -m experiments.historical` 则由 [__main__.py](__main__.md) 解析命令并调用流程。
 
 日历恢复和官方测试日期定位分别通过 `calendar_recovery`、`calendar_alignment` 子模块访问，接口见 [calendar_recovery.md](calendar_recovery.md) 和 [calendar_alignment.md](calendar_alignment.md)。

@@ -1,6 +1,6 @@
 # Asset Allocation Performance Forecasting
 
-`experiments/` 按方法划分为两个独立目录：
+我们实现了基于历史特征的 CatBoost 分类和基于日期定位的历史收益重建两种方法，统一放在 `experiments/` 下：
 
 ```text
 experiments/
@@ -31,8 +31,8 @@ experiments/
 | 常规CatBoost | `python -m experiments.catboost` | [方法与特征说明](experiments/catboost/docs/CatBoost常规预测.md) |
 | 历史重建 | `python -m experiments.historical` | [运行说明](experiments/historical/README.md)、[日期恢复](experiments/historical/docs/calendar_recovery.md)、[官方日期定位](experiments/historical/docs/calendar_alignment.md) |
 
-历史重建的行情与配置在 `experiments/historical/assets/`，已有特征、权重与预测在 `experiments/historical/runs/`。当前保存的本地验证记录为5,792行中正确4,246行，准确率73.308011%。
+历史重建的行情与配置在 `experiments/historical/assets/`，已有特征、权重与预测在 `experiments/historical/runs/`。我们保存的历史重建验证结果为5,792行中正确4,246行，准确率73.308011%。
 
-常规CatBoost的配置在 `experiments/catboost/configs/`，原验证参考模型在 `experiments/catboost/references/forecasting/`，既有运行结果在 `experiments/catboost/runs/`。
+常规CatBoost的配置在 `experiments/catboost/configs/`，基线验证模型在 `experiments/catboost/references/forecasting/`，既有运行结果在 `experiments/catboost/runs/`。
 
 在项目根目录运行命令。数据整理见 [data.md](experiments/historical/docs/data.md)，历史重建运行步骤见 [pipeline.md](experiments/historical/docs/pipeline.md)，命令参数见 [__main__.md](experiments/historical/docs/__main__.md)。两种方法的依赖分别列在各自目录的 `requirements.txt`。

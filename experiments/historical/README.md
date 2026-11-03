@@ -1,6 +1,6 @@
 # 日期定位与历史收益重建
 
-本目录独立提供匿名日期定位、股票与策略历史对齐、收益重建、股票先验和CatBoost分类。`common.py` 提供本方法的数据读取、评分和导出，全部内部导入使用 `experiments.historical`。
+我们通过匿名日期定位，将策略历史与真实股票行情对齐，再重建策略收益，并用 CatBoost 综合各项特征预测涨跌。`common.py` 提供本方法的数据读取、评分和导出，全部内部导入使用 `experiments.historical`。
 
 ```text
 historical/
@@ -24,7 +24,7 @@ python -m experiments.historical --help
 python -m experiments.historical validate
 ```
 
-`validate` 读取保存的验证特征和模型，重新预测并更新本目录 `runs/validation/` 下的验证结果。当前保存记录为准确率73.308011%，5,792行中正确4,246行。
+`validate` 读取保存的验证特征和模型，重新预测并更新本目录 `runs/validation/` 下的验证结果。我们保存的验证结果为准确率73.308011%，5,792行中正确4,246行。
 
 特征准备、模型训练和预测分开执行：
 

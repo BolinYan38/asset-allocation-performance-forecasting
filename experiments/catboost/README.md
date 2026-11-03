@@ -13,10 +13,10 @@ catboost/
   common.py                   原始数据读取、日期划分、评分及导出
   tune_catboost.py            参数搜索
   configs/forecasting.json    当前选定参数
-  docs/CatBoost常规预测.md     特征与原参考方案说明
+  docs/CatBoost常规预测.md     特征与基线方案说明
   references/
     split_dates.csv          保存的日期划分参考
-    forecasting/             原参考模型、特征名、预处理统计与验证结果
+    forecasting/             基线模型、特征名、预处理统计与验证结果
   runs/
     catboost_trials.json     已有参数比较记录
     submission-v1/           已有官方预测模型、预测及提交结果
@@ -26,7 +26,7 @@ catboost/
 
 ## 2. 原始比赛数据
 
-**原始比赛数据未上传至 GitHub。** 从原始数据运行实验时，需自行从比赛平台取得以下文件，默认放入用户主目录下的 `Dataset/Asset Allocation Performance Forecasting/`。
+**原始比赛数据未上传至 GitHub。** 从原始数据运行实验时，需自行从比赛平台取得以下文件，默认存放目录为 `~/Dataset/Asset Allocation Performance Forecasting/`，其中 `~` 表示本机主目录。
 
 ```text
 ~/Dataset/Asset Allocation Performance Forecasting/
@@ -36,7 +36,7 @@ catboost/
   sample_submission.csv   提交格式与原始行号顺序
 ```
 
-本地验证读取前两个文件，官方预测使用全部四个文件。可通过 `--data-dir` 指定其他目录。已有参考模型的复评也需要原始训练数据，以重建日期划分和输入特征。
+本地验证读取前两个文件，官方预测使用全部四个文件。可通过 `--data-dir` 指定其他目录。已保存基线模型的验证也需要原始训练数据，以重建日期划分和输入特征。
 
 ## 3. 特征与数据划分
 
@@ -76,7 +76,7 @@ python -m experiments.catboost validate \
 
 程序读取原始训练数据，重新生成日期划分，构造特征，按当前配置训练一次，再对全部验证行预测和评分。
 
-### 4.2 使用保存的原参考模型复评
+### 4.2 验证已保存的基线模型
 
 ```sh
 python -m experiments.catboost validate \
@@ -103,11 +103,11 @@ python -m experiments.catboost predict \
 
 | 记录 | 结果 | 对应文件 |
 |---|---|---|
-| 原参考验证模型，245次迭代、学习率0.035 | 55,544／104,724，准确率53.0385% | [参考指标](references/forecasting/metrics.json) |
-| 当前配置对应的已记录最佳搜索结果，118次迭代、学习率0.04 | 55,714／104,724，准确率53.2008% | [搜索记录](runs/catboost_trials.json) |
-| 已有 `submission-v1` 官方预测 | 31,870行，记录的公榜分数为0.5140257295 | [提交指标](runs/submission-v1/metrics.json) |
+| 基线验证模型，245次迭代、学习率0.035 | 55,544／104,724，准确率53.0385% | [基线指标](references/forecasting/metrics.json) |
+| 参数搜索选定的配置，118次迭代、学习率0.04 | 55,714／104,724，准确率53.2008% | [搜索记录](runs/catboost_trials.json) |
+| `submission-v1` 官方提交 | 31,870行，公榜分数为0.5140257295 | [提交指标](runs/submission-v1/metrics.json) |
 
-公榜分数来自用户提供的比赛结果。参数搜索使用上述开发验证集选择参数与迭代次数，当前配置记录了这一选择过程。特征说明文档中的245次迭代参数对应原参考模型。
+我们提交 `submission-v1` 后获得了上述公榜分数。参数搜索使用上述开发验证集选择参数与迭代次数，当前配置记录了这一选择过程。特征说明文档分别列出基线模型和当前配置的参数。
 
 ## 6. 参数搜索
 

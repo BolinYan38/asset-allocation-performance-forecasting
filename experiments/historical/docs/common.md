@@ -4,7 +4,7 @@
 
 ## 1. 数据目录与公共接口
 
-`ROOT` 指向项目根目录，`METHOD_ROOT` 指向本方法的 `experiments/historical/` 目录。原始数据默认放在用户目录下的 `Dataset/Asset Allocation Performance Forecasting/`，由 `DEFAULT_DATA` 保存。
+`ROOT` 指向项目根目录，`METHOD_ROOT` 指向本方法的 `experiments/historical/` 目录。原始数据默认目录为 `~/Dataset/Asset Allocation Performance Forecasting/`，其中 `~` 表示本机主目录，该路径由 `DEFAULT_DATA` 保存。
 
 ```python
 raw = load_data(data_dir, include_test=True)
