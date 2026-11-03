@@ -1,0 +1,33 @@
+{
+  "method": "catboost_past_only_allocation_features",
+  "split_seed": 42,
+  "feature_count": 124,
+  "model_parameters": {
+    "iterations": 118,
+    "depth": 7,
+    "learning_rate": 0.04,
+    "l2_leaf_reg": 10,
+    "random_strength": 1.5,
+    "loss_function": "Logloss",
+    "thread_count": 1,
+    "random_seed": 42,
+    "allow_writing_files": false,
+    "border_count": 64,
+    "verbose": 100,
+    "max_ctr_complexity": 1,
+    "eval_metric": "Accuracy"
+  },
+  "recorded_validation_accuracy": 0.5320079446927161,
+  "previous_network_accuracy": 0.5225258775447844,
+  "target_accuracy": 0.55,
+  "target_reached": false,
+  "recorded_public_score": null,
+  "selection": {
+    "metric": "accuracy",
+    "prediction_threshold": 0.5,
+    "results_file": "/Users/clearlove7/Documents/AI introduction/Project/Asset Allocation Performance Forecasting/experiments/catboost/runs/catboost_trials.json",
+    "selected_trial": 8,
+    "validation_labels_used_for_parameter_and_iteration_selection": true,
+    "single_thread_refit_verified": true
+  }
+}

@@ -1,0 +1,13 @@
+# Publish the experiments project and its entry documentation.
+/*
+!/.gitignore
+!/README.md
+!/experiments/
+
+.DS_Store
+__pycache__/
+*.py[cod]
+.env
+.env.*
+.venv/
+venv/

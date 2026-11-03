@@ -1,0 +1,14 @@
+{
+  "accuracy": 0.7330801104972375,
+  "correct": 4246,
+  "rows": 5792,
+  "dates": 23,
+  "by_group": {
+    "1": 0.7218045112781954,
+    "2": 0.7080745341614907,
+    "3": 0.7471428571428571,
+    "4": 0.7575757575757576
+  },
+  "public_score": null,
+  "validation_used_for_model_selection": true
+}

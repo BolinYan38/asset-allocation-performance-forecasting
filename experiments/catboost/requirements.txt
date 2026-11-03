@@ -1,0 +1,4 @@
+# Tested with the existing Python 3.12 runtime; no installation was performed.
+numpy==2.5.3
+pandas==2.2.3
+catboost==1.2.10

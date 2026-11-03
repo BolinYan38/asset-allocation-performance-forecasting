@@ -1,0 +1,28 @@
+{
+  "accuracy": 0.5303846300752454,
+  "correct": 55544,
+  "rows": 104724,
+  "dates": 505,
+  "by_group": {
+    "1": 0.5240886699507389,
+    "2": 0.5304932735426009,
+    "3": 0.5291161690806976,
+    "4": 0.5374255265586977
+  },
+  "public_leaderboard_score": null,
+  "method": "catboost_past_only_allocation_features",
+  "uses_external_data": false,
+  "uses_successor_features": false,
+  "elapsed_seconds": 4.861379957990721,
+  "feature_count": 124,
+  "iterations": 245,
+  "depth": 7,
+  "previous_accuracy": 0.5225258775447844,
+  "additional_correct": 823,
+  "inner_accuracy": 0.5270813466436512,
+  "target_accuracy": 0.55,
+  "target_reached": false,
+  "development_validation_used_to_compare_routes": true,
+  "full_refit_and_scoring_seconds": 34.95838095806539,
+  "learning_code_checkpoint_reproduction_seconds": 4.861379957990721
+}
